@@ -12,6 +12,13 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: docker run
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: npm run
         run: |
            node --version
+           npm install -g react-native-cli
+           npm install
+           npm run ios
+           yarn ios
+           
